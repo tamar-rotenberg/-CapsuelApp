@@ -44,8 +44,20 @@ npm test         # engine tests
 | `public/vision.js` | In-browser color reading from photos (skin tone, top / bottom colors). |
 | `public/views/*` | One file per screen. Profile is saved in the browser. |
 
+## Real SHEIN products
+
+The app uses demo products until a SHEIN affiliate product feed is connected.
+
+1. Join the SHEIN affiliate program (directly, or through a network such as CJ, Awin or Impact) and get your **product feed link** (CSV, TSV or JSON, gzipped is fine).
+2. In GitHub: **Settings → Secrets and variables → Actions → New repository secret**, name `SHEIN_FEED_URL`, value = the feed link.
+3. Run the **Test and deploy** workflow (or wait for the daily refresh). It imports the feed and publishes real products with photos, prices and your affiliate links.
+
+To try a feed locally: `node scripts/import-feed.mjs path/or/url/to/feed.csv` then `npm start`.
+The importer sorts products into categories, palette colors, styles and cuts from their titles, skips what doesn't fit
+(men's, kids, sets, prints, home goods), and keeps up to 150 products per category with a spread of colors.
+The generated `public/data/products.json` is never committed.
+
 ## Not in this POC
 
 - Virtual try-on (needs a generative try-on model).
-- Real SHEIN products (needs SHEIN's affiliate feed; scraping breaks their terms).
 - Real face / body detection (a model would replace the simple photo color reading).

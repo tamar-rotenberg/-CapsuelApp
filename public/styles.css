@@ -124,3 +124,11 @@ button.ghost { background: none; border: 0; color: var(--muted); padding: 12px 0
 .opts.scroll { flex-wrap: nowrap; overflow-x: auto; margin: 10px -16px 0; padding: 0 16px 4px; scrollbar-width: none; }
 .opts.scroll .opt { flex: none; padding: 8px 14px; border-radius: 99px; }
 .act.share { margin-right: auto; font-size: 14px; }
+
+/* product photos */
+.thumb.photo { position: relative; aspect-ratio: 3 / 4; }
+.thumb.photo .fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.thumb.photo .fallback svg { width: 60%; height: 60%; }
+.thumb.photo img { position: relative; width: 100%; height: 100%; object-fit: cover; }
+.swipe-grid .thumb.photo { aspect-ratio: 3 / 4; }
+.anchor .thumb.photo { aspect-ratio: 1; }
