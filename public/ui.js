@@ -8,7 +8,11 @@ export const money = (n) => `$${n.toFixed(2)}`;
 export const opts = (list, sel) => list.map((v) => `<option value="${v}" ${v === sel ? 'selected' : ''}>${cap(v)}</option>`).join('');
 
 export function thumb(p) {
-  return `<div class="thumb">${p.img ? `<img src="${p.img}" alt="">` : garmentSvg(p.category, COLORS[p.color].hex)}</div>`;
+  const src = p.img || p.image;
+  if (!src) return `<div class="thumb">${garmentSvg(p.category, COLORS[p.color].hex)}</div>`;
+  // Product photo, with the color drawing behind it in case the photo fails to load.
+  return `<div class="thumb photo"><span class="fallback">${garmentSvg(p.category, COLORS[p.color].hex)}</span>
+    <img src="${src}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>`;
 }
 
 /** A product tile. mode 'shop' links to SHEIN, 'pick' is a button. */

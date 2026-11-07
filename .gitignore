@@ -1,0 +1,3 @@
+node_modules/
+# Real product data is built by CI from the private feed link, never committed.
+public/data/

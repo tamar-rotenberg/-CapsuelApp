@@ -1,3 +1,4 @@
+import { COLORS } from './colors.js';
 // Mock SHEIN-style catalog. A real version would come from a product feed / affiliate API.
 export const CATEGORIES = ['top', 'bottom', 'skirt', 'dress', 'outerwear', 'shoes', 'bag', 'accessory'];
 export const STYLES = ['casual', 'street', 'chic', 'elegant', 'boho', 'sporty', 'office'];
@@ -105,7 +106,8 @@ const CUTS = {
 };
 
 // Each color variant becomes its own product, like a SHEIN listing per color.
-export const CATALOG = RAW.flatMap(([name, category, colors, styles, price], i) =>
+// Built-in demo products, used until a real feed is imported (scripts/import-feed.mjs).
+export const DEMO_CATALOG = RAW.flatMap(([name, category, colors, styles, price], i) =>
   colors.map((color, j) => ({
     id: `p${i}-${j}`,
     name,
@@ -125,3 +127,44 @@ function titleFor(name, color) {
 }
 
 function cap(s) { return s[0].toUpperCase() + s.slice(1); }
+
+// The catalog the app uses. A live binding: modules that import CATALOG see the
+// real products once loadCatalog() has replaced the demo list.
+export let CATALOG = DEMO_CATALOG;
+export let CATALOG_INFO = { source: 'demo', count: DEMO_CATALOG.length };
+
+/** Load real products from data/products.json if it was published; keep the demo list otherwise. */
+export async function loadCatalog(url = 'data/products.json') {
+  try {
+    const res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) return CATALOG_INFO;
+    const data = await res.json();
+    const products = (data.products || [])
+      .filter((p) => p.id && CATEGORIES.includes(p.category) && COLORS[p.color] && p.price > 0 && safeUrl(p.url))
+      .map(clean);
+    if (products.length >= 20) {
+      CATALOG = products;
+      CATALOG_INFO = { source: data.source || 'feed', count: CATALOG.length, updated: data.updated };
+    }
+  } catch {}
+  return CATALOG_INFO;
+}
+
+// Feed text goes into the page as HTML, so keep only safe characters and https links.
+const safeUrl = (u) => typeof u === 'string' && /^https:\/\/[^\s"'<>`]+$/.test(u);
+const text = (s) => String(s ?? '').replace(/[<>"'`&]/g, '').slice(0, 140);
+
+function clean(p) {
+  return {
+    id: String(p.id).replace(/[^\w-]/g, ''),
+    name: text(p.name || p.title),
+    title: text(p.title),
+    category: p.category,
+    color: p.color,
+    styles: (p.styles || []).filter((s) => STYLES.includes(s)).slice(0, 3).concat(p.styles?.length ? [] : ['casual']),
+    cuts: (p.cuts || []).map(text),
+    price: +Number(p.price).toFixed(2),
+    url: p.url,
+    ...(safeUrl(p.image) ? { image: p.image } : {}),
+  };
+}

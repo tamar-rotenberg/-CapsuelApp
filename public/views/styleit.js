@@ -41,7 +41,7 @@ export function render(el, ctx) {
       const list = () => {
         const cat = $('f-category').value, q = $('f-search').value.trim().toLowerCase();
         let items = CATALOG.filter((x) => (!cat || x.category === cat) && (!q || x.title.toLowerCase().includes(q)));
-        if (!cat && !q) items = items.filter((x) => x.id.endsWith('-0'));
+        if (!cat && !q) items = items.filter((x, i, all) => all.findIndex((y) => y.name === x.name) === i).slice(0, 60);
         $('catalog').innerHTML = items.map((x) => itemCard(x, { mode: 'pick' })).join('') || '<p class="empty">Nothing found</p>';
       };
       $('f-category').addEventListener('change', list);

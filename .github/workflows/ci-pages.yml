@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Daily refresh of real product data (prices, stock) when a feed is configured.
+    - cron: '17 3 * * *'
 
 permissions:
   contents: read
@@ -29,6 +32,9 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: test
     runs-on: ubuntu-latest
+    env:
+      # Private affiliate feed link, saved in Settings → Secrets and variables → Actions.
+      SHEIN_FEED_URL: ${{ secrets.SHEIN_FEED_URL }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -48,6 +54,13 @@ jobs:
           fi
       - if: steps.pages.outputs.enabled == 'true'
         uses: actions/checkout@v5
+      - if: steps.pages.outputs.enabled == 'true' && env.SHEIN_FEED_URL != ''
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Import real SHEIN products from the affiliate feed
+        if: steps.pages.outputs.enabled == 'true' && env.SHEIN_FEED_URL != ''
+        run: node scripts/import-feed.mjs "$SHEIN_FEED_URL" || echo "::warning::Feed import failed, publishing with demo products."
       - if: steps.pages.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
       - if: steps.pages.outputs.enabled == 'true'

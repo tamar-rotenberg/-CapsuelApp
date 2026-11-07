@@ -1,6 +1,7 @@
 // App shell: holds the profile, switches between views.
 import { loadProfile, saveProfile } from './store.js';
 import { $ } from './ui.js';
+import { loadCatalog } from './catalog.js';
 import * as onboarding from './views/onboarding.js';
 import * as feed from './views/feed.js';
 import * as styleit from './views/styleit.js';
@@ -44,6 +45,8 @@ function updateChrome() {
 document.querySelectorAll('#tabs button').forEach((b) => b.addEventListener('click', () => ctx.go(b.dataset.view)));
 $('profile-chip').addEventListener('click', () => ctx.go('me'));
 
+// Real products if a feed was published, demo products otherwise.
+await loadCatalog();
 ctx.go(ctx.profile?.season ? 'feed' : 'onboarding');
 
 // Installable + works offline.

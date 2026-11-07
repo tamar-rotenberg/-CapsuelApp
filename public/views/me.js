@@ -1,5 +1,5 @@
 // Profile summary, closet ("I own this") and re-taking the quiz.
-import { CATALOG, CATEGORIES } from '../catalog.js';
+import { CATALOG, CATEGORIES, CATALOG_INFO } from '../catalog.js';
 import { SEASONS, BODY_SHAPES, personalScore } from '../profile.js';
 import { OCCASIONS } from '../stylist.js';
 import { clearProfile } from '../store.js';
@@ -36,6 +36,9 @@ export function render(el, ctx) {
         : '<p class="muted">Tap ♥ on a look in For you to save it here.</p>'}
     </section>
     <section class="card">
+      <p class="muted small source">${CATALOG_INFO.source === 'demo'
+        ? `Showing ${CATALOG_INFO.count} demo products. Real SHEIN products appear once a feed is connected.`
+        : `${CATALOG_INFO.count} SHEIN products, updated ${new Date(CATALOG_INFO.updated).toLocaleDateString()}.`}</p>
       <h2>My closet <small class="muted" id="closet-count">(${p.closet.length})</small></h2>
       <p class="muted">Tap items you already own. Outfits and your capsule will use them first.</p>
       <div class="filters"><select id="cl-cat">${opts(CATEGORIES)}</select></div>
