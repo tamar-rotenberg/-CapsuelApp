@@ -16,7 +16,7 @@ export function render(el, ctx) {
     selfie: null,
     shape: prev.shape || null,
     styles: [...(prev.styles || [])],
-    budget: prev.budget ?? 90,
+    budget: prev.budget ?? 120,
     taste: ctx.startStep === 'swipe' ? emptyTaste() : prev.taste || emptyTaste(),
     deck: null,
     i: 0,
@@ -119,7 +119,7 @@ export function render(el, ctx) {
         <p class="muted">Pick everything you like.</p>
         <div class="opts wrap">${STYLES.map((st) => `<button class="opt ${s.styles.includes(st) ? 'active' : ''}" data-style="${st}">${cap(st)}</button>`).join('')}</div>
         <h3>Budget per outfit</h3>
-        <div class="opts">${[40, 60, 90, 0].map((b) => `<button class="opt ${s.budget === b ? 'active' : ''}" data-budget="${b}">${b ? `$${b}` : 'No limit'}</button>`).join('')}</div>
+        <div class="opts">${[90, 120, 150, 0].map((b) => `<button class="opt ${s.budget === b ? 'active' : ''}" data-budget="${b}">${b ? `$${b}` : 'No limit'}</button>`).join('')}</div>
         <button class="primary" id="next" ${s.styles.length ? '' : 'disabled'}>Continue</button>
       </section>`;
       el.querySelectorAll('[data-style]').forEach((b) => b.addEventListener('click', () => {

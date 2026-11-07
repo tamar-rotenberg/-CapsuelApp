@@ -77,11 +77,14 @@ export function buildFeed(profile = {}, { count = 10, catalog = CATALOG } = {}) 
   return looks.sort((x, y) => y.score - x.score).slice(0, count);
 }
 
-/** Price of the cheapest complete look the catalog allows (top + bottom or a dress, plus shoes and a bag). */
+/** Price of the cheapest full look the catalog allows: top + bottom (or a dress), shoes, bag, jacket, accessory. */
 export function cheapestLook(catalog = CATALOG) {
-  const min = (cats) => Math.min(...catalog.filter((p) => cats.includes(p.category)).map((p) => p.price));
-  const body = Math.min(min(['top']) + min(['bottom', 'skirt']), min(['dress']));
-  return Math.ceil(body + min(['shoes']) + min(['bag']));
+  const min = (cats) => {
+    const prices = catalog.filter((p) => cats.includes(p.category)).map((p) => p.price);
+    return prices.length ? Math.min(...prices) : 0; // a piece the catalog lacks isn't part of the look
+  };
+  const body = Math.min(min(['top']) + min(['bottom', 'skirt']), min(['dress']) || Infinity);
+  return Math.ceil(body + min(['shoes']) + min(['bag']) + min(['outerwear']) + min(['accessory']));
 }
 
 // ---------- Outfit scanner ----------
