@@ -76,15 +76,22 @@ export function buildOutfits(anchor, opts = {}) {
   const pool = catalog.filter((p) => p.id !== anchor.id && (!style || p.styles.includes(style)));
   const used = new Map(); // item id -> times used, to keep outfits varied
   const outfits = [];
+  const catsOf = (slot) => slot.replace('?', '').split('|');
+  const required = slots.filter((s) => !s.endsWith('?'));
+  const cheapest = (slot) => Math.min(...pool.filter((p) => catsOf(slot).includes(p.category)).map((p) => p.price));
 
   for (let k = 0; k < count; k++) {
     const picked = [anchor];
+    let complete = true;
     for (const slot of slots) {
       const optional = slot.endsWith('?');
-      const cats = slot.replace('?', '').split('|');
+      const cats = catsOf(slot);
       const spent = picked.reduce((s, p) => s + (p.price || 0), 0) - (anchor.price || 0);
+      // Keep enough budget for the required pieces still to come (shoes, bag…).
+      const reserve = required.slice(required.indexOf(slot) + 1).reduce((s, r) => s + cheapest(r), 0);
+      const left = maxBudget - spent - (optional ? 0 : reserve);
       const candidates = pool
-        .filter((p) => cats.includes(p.category) && spent + p.price <= maxBudget)
+        .filter((p) => cats.includes(p.category) && p.price <= left)
         .filter((p) => !picked.some((x) => x.category === p.category))
         .map((p) => {
           const fit = picked.reduce((s, x) => s + pairScore(x, p), 0) / picked.length;
@@ -93,10 +100,11 @@ export function buildOutfits(anchor, opts = {}) {
         })
         .sort((a, b) => b.score - a.score);
       const best = candidates[0];
-      if (!best) continue;
+      if (!best) { if (!optional) complete = false; continue; }
       if (optional && best.score < 0.72) continue; // only add extras that really fit
       picked.push(best.p);
     }
+    if (!complete) break; // never show a look missing a top/bottom, shoes or bag
     const items = picked.slice(1);
     items.forEach((p) => {
       used.set(p.id, (used.get(p.id) || 0) + 1);

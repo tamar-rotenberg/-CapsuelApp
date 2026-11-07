@@ -147,7 +147,7 @@ function reasons(items, profile, { palette }) {
     const rules = BODY_SHAPES[profile.shape];
     const hit = items.flatMap((i) => i.cuts || []).find((c) => rules.good.includes(c));
     if (hit) {
-      const cut = hit === 'a-line' ? 'A-line' : hit.replaceAll('-', ' ');
+      const cut = { 'a-line': 'A-line', 'v-neck': 'V-neck' }[hit] || hit.replaceAll('-', ' ');
       const article = /^[aeiouh]/i.test(rules.label) ? 'an' : 'a';
       out.push(`${cut} cut flatters ${article} ${rules.label.toLowerCase()} shape`);
     }
