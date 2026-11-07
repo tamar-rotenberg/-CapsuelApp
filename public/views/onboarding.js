@@ -135,7 +135,7 @@ export function render(el, ctx) {
       const look = s.deck[s.i];
       el.innerHTML = `<section class="card">${progress()}
         <h2>Train your stylist</h2>
-        <p class="muted">Would you wear this? <span class="counter">${Math.min(s.i + 1, SWIPES)} / ${SWIPES}</span></p>
+        <p class="muted">Would you wear this? <span class="counter">${Math.min(s.i + 1, s.deck.length)} / ${s.deck.length}</span></p>
         <div class="swipe-card" id="swipe-card">
           <div class="swipe-grid">${look.items.map((p) => `<div>${thumb(p)}<small>${p.title}</small></div>`).join('')}</div>
         </div>
