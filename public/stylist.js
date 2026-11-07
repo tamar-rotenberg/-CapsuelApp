@@ -1,6 +1,6 @@
 // Dressly-style features built on the matcher + profile:
 // swipe deck, personal feed, outfit scanner and capsule wardrobe builder.
-import { CATALOG, STYLES } from './catalog.js';
+import { CATALOG, CATEGORIES, STYLES } from './catalog.js';
 import { COLORS } from './colors.js';
 import { buildOutfits, colorScore, outfitScore, pairScore } from './matcher.js';
 import { paletteScore, bodyScore, personalScore, SEASONS } from './profile.js';
@@ -38,31 +38,50 @@ export function swipeDeck(n = 20, catalog = CATALOG) {
 /** Outfits made for this person, best first, each with a score and reasons. */
 export function buildFeed(profile = {}, { count = 10, catalog = CATALOG } = {}) {
   const budget = profile.budget || Infinity;
-  const pool = catalog.filter((p) => paletteScore(p.color, profile.season) >= 0.45);
-  let anchors = pool.filter((p) => MAIN.includes(p.category) && paletteScore(p.color, profile.season) >= 0.6);
-  if (profile.styles?.length) {
-    const styled = anchors.filter((p) => p.styles.some((s) => profile.styles.includes(s)));
-    if (styled.length >= 8) anchors = styled;
-  }
-  // Best-suited anchors first; pieces already used in earlier looks get a penalty so the feed stays varied.
-  anchors.sort((x, y) => itemBoost(y, profile) - itemBoost(x, profile));
+  // Your palette first. A category with almost nothing in your colors falls back to all its
+  // items (scoring still prefers the closest colors), so every look can be complete.
+  const inPalette = catalog.filter((p) => paletteScore(p.color, profile.season) >= 0.45);
+  const pool = CATEGORIES.flatMap((c) => {
+    const mine = inPalette.filter((p) => p.category === c);
+    return mine.length >= 2 ? mine : catalog.filter((p) => p.category === c);
+  });
   const used = new Map();
   const boost = (p) => itemBoost(p, profile) - 0.1 * (used.get(p.name) || 0);
   const looks = [];
   const seenAnchor = new Set();
-  for (const a of anchors) {
-    if (a.price > budget || seenAnchor.has(a.name)) continue;
-    const [o] = buildOutfits(a, { count: 1, maxBudget: budget - a.price, catalog: pool, boost });
-    if (!o) continue;
-    const items = [a, ...o.items];
-    const pairKey = items.filter((p) => MAIN.includes(p.category)).map((p) => p.name).sort().join('+');
-    if (seenAnchor.has(pairKey)) continue;
-    seenAnchor.add(a.name).add(pairKey);
-    o.items.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
-    const total = +items.reduce((s, p) => s + p.price, 0).toFixed(2);
-    looks.push({ items, total, ...personalScore(items, profile) });
-  }
+
+  const addLooks = (pool, anchors) => {
+    if (profile.styles?.length) {
+      const styled = anchors.filter((p) => p.styles.some((s) => profile.styles.includes(s)));
+      if (styled.length >= 8) anchors = styled;
+    }
+    // Best-suited anchors first; pieces already used in earlier looks get a penalty so the feed stays varied.
+    anchors = [...anchors].sort((x, y) => itemBoost(y, profile) - itemBoost(x, profile));
+    for (const a of anchors) {
+      if (a.price > budget || seenAnchor.has(a.name)) continue;
+      const [o] = buildOutfits(a, { count: 1, maxBudget: budget - a.price, catalog: pool, boost });
+      if (!o) continue;
+      const items = [a, ...o.items];
+      const pairKey = items.filter((p) => MAIN.includes(p.category)).map((p) => p.name).sort().join('+');
+      if (seenAnchor.has(pairKey)) continue;
+      seenAnchor.add(a.name).add(pairKey);
+      o.items.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
+      const total = +items.reduce((s, p) => s + p.price, 0).toFixed(2);
+      looks.push({ items, total, ...personalScore(items, profile) });
+    }
+  };
+
+  addLooks(pool, pool.filter((p) => MAIN.includes(p.category) && paletteScore(p.color, profile.season) >= 0.6));
+  // Too few looks in your colors (small catalog or tight budget): allow any color, ranked lower.
+  if (looks.length < count) addLooks(catalog, catalog.filter((p) => MAIN.includes(p.category)));
   return looks.sort((x, y) => y.score - x.score).slice(0, count);
+}
+
+/** Price of the cheapest complete look the catalog allows (top + bottom or a dress, plus shoes and a bag). */
+export function cheapestLook(catalog = CATALOG) {
+  const min = (cats) => Math.min(...catalog.filter((p) => cats.includes(p.category)).map((p) => p.price));
+  const body = Math.min(min(['top']) + min(['bottom', 'skirt']), min(['dress']));
+  return Math.ceil(body + min(['shoes']) + min(['bag']));
 }
 
 // ---------- Outfit scanner ----------
