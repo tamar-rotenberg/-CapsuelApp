@@ -14,16 +14,16 @@ const STYLE_FRIENDS = {
   office: ['chic', 'elegant'],
 };
 
-// Which slots an outfit needs, depending on the anchor item.
+// A full look, head to toe: every piece is required. ('?' would mark an optional extra.)
 const SLOTS_FOR = {
-  top: ['bottom|skirt', 'shoes', 'bag', 'outerwear?', 'accessory?'],
-  bottom: ['top', 'shoes', 'bag', 'outerwear?', 'accessory?'],
-  skirt: ['top', 'shoes', 'bag', 'outerwear?', 'accessory?'],
-  dress: ['shoes', 'bag', 'outerwear?', 'accessory?'],
-  outerwear: ['top', 'bottom|skirt', 'shoes', 'bag'],
-  shoes: ['top', 'bottom|skirt', 'bag', 'accessory?'],
-  bag: ['top', 'bottom|skirt', 'shoes', 'accessory?'],
-  accessory: ['top', 'bottom|skirt', 'shoes', 'bag'],
+  top: ['bottom|skirt', 'shoes', 'bag', 'outerwear', 'accessory'],
+  bottom: ['top', 'shoes', 'bag', 'outerwear', 'accessory'],
+  skirt: ['top', 'shoes', 'bag', 'outerwear', 'accessory'],
+  dress: ['shoes', 'bag', 'outerwear', 'accessory'],
+  outerwear: ['top', 'bottom|skirt', 'shoes', 'bag', 'accessory'],
+  shoes: ['top', 'bottom|skirt', 'bag', 'outerwear', 'accessory'],
+  bag: ['top', 'bottom|skirt', 'shoes', 'outerwear', 'accessory'],
+  accessory: ['top', 'bottom|skirt', 'shoes', 'bag', 'outerwear'],
 };
 
 function hueDistance(a, b) {
@@ -72,11 +72,13 @@ export function outfitScore(items) {
  */
 export function buildOutfits(anchor, opts = {}) {
   const { count = 4, maxBudget = Infinity, style = null, catalog = CATALOG, boost = null } = opts;
-  const slots = SLOTS_FOR[anchor.category] || SLOTS_FOR.top;
+  const catsOf = (slot) => slot.replace('?', '').split('|');
+  // A piece the catalog has none of (e.g. no accessories yet) is left out, rather than hiding every look.
+  const slots = (SLOTS_FOR[anchor.category] || SLOTS_FOR.top)
+    .filter((s) => catalog.some((p) => catsOf(s).includes(p.category)));
   const pool = catalog.filter((p) => p.id !== anchor.id && (!style || p.styles.includes(style)));
   const used = new Map(); // item id -> times used, to keep outfits varied
   const outfits = [];
-  const catsOf = (slot) => slot.replace('?', '').split('|');
   const required = slots.filter((s) => !s.endsWith('?'));
   const cheapest = (slot) => Math.min(...pool.filter((p) => catsOf(slot).includes(p.category)).map((p) => p.price));
 
