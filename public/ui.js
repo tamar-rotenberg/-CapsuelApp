@@ -25,10 +25,11 @@ export function itemCard(p, { mode = 'shop', owned = false } = {}) {
 export function lookCard(look, { title, closet = [], actions = null, index = 0 } = {}) {
   const toBuy = look.items.filter((p) => !closet.includes(p.id));
   const total = toBuy.reduce((s, p) => s + p.price, 0);
+  const share = `<button class="act share" data-act="share" data-i="${index}" aria-label="Share look">Share ↗</button>`;
   const btns = {
-    rate: `<button class="act" data-act="dislike" data-i="${index}" aria-label="Not for me">✕</button>
+    rate: `${share}<button class="act" data-act="dislike" data-i="${index}" aria-label="Not for me">✕</button>
       <button class="act ${look.saved ? 'on' : ''}" data-act="save" data-i="${index}" aria-label="Save look">♥</button>`,
-    remove: `<button class="act" data-act="remove" data-i="${index}" aria-label="Remove">Remove</button>`,
+    remove: `${share}<button class="act" data-act="remove" data-i="${index}" aria-label="Remove">Remove</button>`,
   }[actions] || '';
   return `<article class="outfit">
     <div class="outfit-head"><strong>${title}</strong>
