@@ -123,3 +123,4 @@ button.ghost { background: none; border: 0; color: var(--muted); padding: 12px 0
 .act.on { color: #d9466f; border-color: #d9466f; }
 .opts.scroll { flex-wrap: nowrap; overflow-x: auto; margin: 10px -16px 0; padding: 0 16px 4px; scrollbar-width: none; }
 .opts.scroll .opt { flex: none; padding: 8px 14px; border-radius: 99px; }
+.act.share { margin-right: auto; font-size: 14px; }

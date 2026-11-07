@@ -1,5 +1,5 @@
 // Simple flat garment drawings, tinted with the product color (stand-ins for product photos).
-const PATHS = {
+export const PATHS = {
   top: 'M30 18 L42 12 Q50 20 58 12 L70 18 L84 34 L74 42 L68 36 L68 88 L32 88 L32 36 L26 42 L16 34 Z',
   bottom: 'M30 12 L70 12 L74 88 L56 88 L50 36 L44 88 L26 88 Z',
   skirt: 'M34 14 L66 14 L82 84 Q50 92 18 84 Z',

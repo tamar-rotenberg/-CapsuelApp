@@ -3,6 +3,7 @@
 import { buildFeed, OCCASIONS, forOccasion } from '../stylist.js';
 import { BODY_SHAPES, learn } from '../profile.js';
 import { lookCard, lookId, cap } from '../ui.js';
+import { shareLook } from '../share.js';
 
 export function render(el, ctx) {
   let count = 6;
@@ -37,6 +38,7 @@ export function render(el, ctx) {
     const act = e.target.closest('[data-act]');
     if (!act) return;
     const look = feed[Number(act.dataset.i)];
+    if (act.dataset.act === 'share') return shareLook(look, `Look ${Number(act.dataset.i) + 1}`);
     const id = lookId(look.items);
     const p = ctx.profile;
     if (act.dataset.act === 'save') {

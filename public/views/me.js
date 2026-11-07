@@ -3,6 +3,7 @@ import { CATALOG, CATEGORIES } from '../catalog.js';
 import { SEASONS, BODY_SHAPES, personalScore } from '../profile.js';
 import { OCCASIONS } from '../stylist.js';
 import { clearProfile } from '../store.js';
+import { shareLook } from '../share.js';
 import { $, cap, opts, swatches, itemCard, lookCard } from '../ui.js';
 
 export function render(el, ctx) {
@@ -60,6 +61,11 @@ export function render(el, ctx) {
   drawCloset();
 
   el.addEventListener('click', (e) => {
+    const s = e.target.closest('[data-act=share]');
+    if (s) {
+      const look = savedLooks[Number(s.dataset.i)];
+      return shareLook(look, OCCASIONS[look.occasion]?.label ? `${OCCASIONS[look.occasion].label} look` : 'My look');
+    }
     const b = e.target.closest('[data-act=remove]');
     if (!b) return;
     const id = savedLooks[Number(b.dataset.i)].id;

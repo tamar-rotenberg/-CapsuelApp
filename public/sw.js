@@ -1,8 +1,8 @@
 // Offline support: serve the app files from cache, refresh them in the background.
-const CACHE = 'capsule-v2';
+const CACHE = 'capsule-v3';
 const FILES = [
   './', 'index.html', 'styles.css', 'app.js', 'catalog.js', 'colors.js', 'icons.js', 'matcher.js',
-  'profile.js', 'store.js', 'stylist.js', 'ui.js', 'vision.js',
+  'profile.js', 'store.js', 'stylist.js', 'ui.js', 'vision.js', 'share.js',
   'views/onboarding.js', 'views/feed.js', 'views/styleit.js', 'views/scan.js', 'views/capsule.js', 'views/me.js',
   'manifest.webmanifest', 'icons/icon-192.png',
 ];
