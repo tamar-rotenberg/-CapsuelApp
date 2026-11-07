@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Capsule Stylist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Capsule</h1>
+    <button class="chip" id="profile-chip" hidden></button>
+  </header>
+
+  <main id="view"></main>
+
+  <nav id="tabs" hidden>
+    <button data-view="feed"><span>✦</span>For you</button>
+    <button data-view="styleit"><span>◎</span>Style it</button>
+    <button data-view="scan"><span>⌖</span>Scan</button>
+    <button data-view="capsule"><span>▦</span>Capsule</button>
+    <button data-view="me"><span>☺</span>Me</button>
+  </nav>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
