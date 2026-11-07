@@ -116,3 +116,10 @@ button.ghost { background: none; border: 0; color: var(--muted); padding: 12px 0
 .own-toggle.on { border-color: var(--good); }
 .own-toggle.on::after { content: '✓ Own'; position: absolute; top: 8px; right: 8px; background: var(--good); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 99px; }
 .own-toggle .item { border: 0; }
+
+/* look actions + occasion chips */
+.look-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
+.act { border: 1px solid var(--line); background: var(--bg); border-radius: 99px; min-width: 44px; height: 40px; padding: 0 14px; cursor: pointer; font-size: 16px; }
+.act.on { color: #d9466f; border-color: #d9466f; }
+.opts.scroll { flex-wrap: nowrap; overflow-x: auto; margin: 10px -16px 0; padding: 0 16px 4px; scrollbar-width: none; }
+.opts.scroll .opt { flex: none; padding: 8px 14px; border-radius: 99px; }

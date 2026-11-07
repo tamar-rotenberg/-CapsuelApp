@@ -79,3 +79,19 @@ test('owned items are preferred and free in the capsule', () => {
   const look = personalScore([mine], { ...profile, closet: [mine.id] });
   assert.ok(look.reasons.some((r) => r.includes('you own')));
 });
+
+test('occasion changes the feed toward its styles', async () => {
+  const { forOccasion } = await import('../public/stylist.js');
+  const work = buildFeed(forOccasion(profile, 'work'));
+  const share = work.filter((l) => l.items[0].styles.some((s) => ['office', 'chic'].includes(s))).length / work.length;
+  assert.ok(share >= 0.8, `share ${share}`);
+  assert.deepEqual(forOccasion(profile, 'everyday'), profile);
+});
+
+test('dislikes push similar looks down', () => {
+  const before = buildFeed(profile);
+  let taste = emptyTaste();
+  for (let i = 0; i < 3; i++) taste = learn(taste, before[0].items, false);
+  const after = buildFeed({ ...profile, taste });
+  assert.ok(after[0].score <= before[0].score || after[0].items[0].id !== before[0].items[0].id);
+});

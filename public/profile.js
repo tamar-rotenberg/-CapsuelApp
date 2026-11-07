@@ -146,7 +146,11 @@ function reasons(items, profile, { palette }) {
   if (profile.shape) {
     const rules = BODY_SHAPES[profile.shape];
     const hit = items.flatMap((i) => i.cuts || []).find((c) => rules.good.includes(c));
-    if (hit) out.push(`${hit.replaceAll('-', ' ')} cut flatters a ${rules.label.toLowerCase()} shape`);
+    if (hit) {
+      const cut = hit === 'a-line' ? 'A-line' : hit.replaceAll('-', ' ');
+      const article = /^[aeiouh]/i.test(rules.label) ? 'an' : 'a';
+      out.push(`${cut} cut flatters ${article} ${rules.label.toLowerCase()} shape`);
+    }
   }
   const fav = profile.styles?.find((s) => items[0].styles.includes(s)) || profile.styles?.find((s) => items.some((i) => i.styles.includes(s)));
   if (fav) out.push(`fits your ${fav} style`);

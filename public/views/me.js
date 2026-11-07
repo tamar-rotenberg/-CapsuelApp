@@ -1,11 +1,17 @@
 // Profile summary, closet ("I own this") and re-taking the quiz.
 import { CATALOG, CATEGORIES } from '../catalog.js';
-import { SEASONS, BODY_SHAPES } from '../profile.js';
+import { SEASONS, BODY_SHAPES, personalScore } from '../profile.js';
+import { OCCASIONS } from '../stylist.js';
 import { clearProfile } from '../store.js';
-import { $, cap, opts, swatches, itemCard } from '../ui.js';
+import { $, cap, opts, swatches, itemCard, lookCard } from '../ui.js';
 
 export function render(el, ctx) {
   const p = ctx.profile;
+  const byId = new Map(CATALOG.map((x) => [x.id, x]));
+  const savedLooks = (p.saved || [])
+    .map((s) => ({ ...s, items: s.ids.map((id) => byId.get(id)).filter(Boolean) }))
+    .filter((s) => s.items.length)
+    .map((s) => ({ ...s, ...personalScore(s.items, p) }));
   const liked = Object.entries(p.taste?.styles || {}).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k]) => k);
 
   el.innerHTML = `<section class="card">
@@ -21,6 +27,12 @@ export function render(el, ctx) {
         <button class="opt" id="retrain">Redo swipes</button>
         <button class="opt" id="reset">Reset all</button>
       </div>
+    </section>
+    <section class="card">
+      <h2>Saved looks <small class="muted">(${savedLooks.length})</small></h2>
+      ${savedLooks.length
+        ? savedLooks.map((l, i) => lookCard(l, { title: OCCASIONS[l.occasion]?.label || 'Look', closet: p.closet, actions: 'remove', index: i })).join('')
+        : '<p class="muted">Tap ♥ on a look in For you to save it here.</p>'}
     </section>
     <section class="card">
       <h2>My closet <small class="muted" id="closet-count">(${p.closet.length})</small></h2>
@@ -46,6 +58,14 @@ export function render(el, ctx) {
     $('closet-count').textContent = `(${closet.length})`;
   });
   drawCloset();
+
+  el.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-act=remove]');
+    if (!b) return;
+    const id = savedLooks[Number(b.dataset.i)].id;
+    ctx.setProfile({ ...ctx.profile, saved: ctx.profile.saved.filter((s) => s.id !== id) });
+    ctx.go('me');
+  });
 
   $('redo').addEventListener('click', () => ctx.go('onboarding'));
   $('retrain').addEventListener('click', () => { ctx.startStep = 'swipe'; ctx.go('onboarding'); });
