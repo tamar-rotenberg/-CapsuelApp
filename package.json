@@ -1,0 +1,11 @@
+{
+  "name": "capsule-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "POC: build full outfits around one clothing item, shoppable on SHEIN",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/matcher.test.mjs"
+  }
+}

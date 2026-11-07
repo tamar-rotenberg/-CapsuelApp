@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capsule Outfit Matcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Capsule</h1>
+    <p>Pick a piece you love. We'll style the rest from SHEIN.</p>
+  </header>
+
+  <main>
+    <section class="card" id="start">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="browse" role="tab">Browse items</button>
+        <button class="tab" data-tab="upload" role="tab">Upload my piece</button>
+      </div>
+
+      <div class="panel" id="panel-browse">
+        <div class="filters">
+          <select id="f-category"><option value="">All categories</option></select>
+          <input id="f-search" type="search" placeholder="Search e.g. satin skirt">
+        </div>
+        <div class="grid" id="catalog"></div>
+      </div>
+
+      <div class="panel hidden" id="panel-upload">
+        <label class="drop" id="drop">
+          <input type="file" id="file" accept="image/*" hidden>
+          <img id="preview" alt="" hidden>
+          <span id="drop-text">Tap to add a photo of your item</span>
+        </label>
+        <div class="row">
+          <label>Category <select id="u-category"></select></label>
+          <label>Color <select id="u-color"></select></label>
+        </div>
+        <div class="row">
+          <label>Style <select id="u-style"></select></label>
+        </div>
+        <button class="primary" id="u-go">Style it</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="results">
+      <div class="anchor" id="anchor"></div>
+      <div class="filters">
+        <label>Vibe <select id="r-style"><option value="">Any</option></select></label>
+        <label>Budget <select id="r-budget">
+          <option value="">No limit</option><option>30</option><option>50</option><option>80</option>
+        </select></label>
+      </div>
+      <div id="outfits"></div>
+      <button class="ghost" id="back">← Pick another item</button>
+    </section>
+  </main>
+
+  <footer>Proof of concept. Product data is mock; links open a SHEIN search for each item.</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
