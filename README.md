@@ -4,7 +4,12 @@ Capsule copies the logic of the Dressly app: it builds your style profile
 (color season, body shape, taste), then shows complete outfits from SHEIN ranked for you.
 See [docs/DRESSLY_ANALYSIS.md](docs/DRESSLY_ANALYSIS.md) for how Dressly works and what we copied.
 
-## Run
+## Try it
+
+**Live app:** https://tamar-rotenberg.github.io/-CapsuelApp/ (deployed automatically from `main`).
+On a phone, use "Add to Home Screen" to install it like an app; it also works offline.
+
+## Run locally
 
 ```bash
 npm start        # http://localhost:3000  (no dependencies to install)

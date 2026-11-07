@@ -42,3 +42,6 @@ document.querySelectorAll('#tabs button').forEach((b) => b.addEventListener('cli
 $('profile-chip').addEventListener('click', () => ctx.go('me'));
 
 ctx.go(ctx.profile?.season ? 'feed' : 'onboarding');
+
+// Installable + works offline.
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
