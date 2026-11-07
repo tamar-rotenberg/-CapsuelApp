@@ -1,0 +1,508 @@
+{
+ "source": "shein-apify",
+ "updated": "2026-11-07T12:46:01.543Z",
+ "products": [
+  {
+   "id": "s455888921",
+   "name": "ATUI Studio Women's Plain  100 Cotton All-Match T-Shirt Soft Breathable Short Sleeve Tee Everyday Essential Summer Beach Daytime Night Home Party Vacation Casual",
+   "title": "ATUI Studio Women's Plain White 100 Cotton All-Match…",
+   "category": "top",
+   "color": "white",
+   "styles": [
+    "casual",
+    "elegant",
+    "boho"
+   ],
+   "cuts": [],
+   "price": 16.09,
+   "url": "https://us.shein.com/ATUI-Studio-Womens-Plain-White-100-Cotton-All-Match-T-Shirt-Soft-Breathable-Short-Sleeve-Tee-Everyday-Essential-Summer-Beach-Daytime-Night-Home-Party-Vacation-Casual-p-455888921.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2026/05/13/43/1778650964b5255ca886dc8e2b32890ada27d41bf9_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s430705575",
+   "name": "Travachic Women's  Elegant Lace Patchwork Camisole Top, Summer Holiday Night Out Top, Boho V-Neck Satin Cami Top, Beach Party, Casual Wedding Guest",
+   "title": "Travachic Women's Black Elegant Lace Patchwork Camisole Top",
+   "category": "top",
+   "color": "black",
+   "styles": [
+    "casual",
+    "chic",
+    "elegant"
+   ],
+   "cuts": [
+    "v-neck"
+   ],
+   "price": 15.88,
+   "url": "https://us.shein.com/Travachic-Womens-Black-Elegant-Lace-Patchwork-Camisole-Top-Summer-Holiday-Night-Out-Top-Boho-V-Neck-Satin-Cami-Top-Beach-Party-Casual-Wedding-Guest-p-430705575.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/dps/PS2026081910416/a75efad43eafd987a860ab1c2a5a75bbd86b5c09874afe3766d2186e882cd3db_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s40961643",
+   "name": "SHEIN EZwear Simple Scoop Neck Fitted Tee Shirt For Women, Summer Casual Minimalist Basic Modest Suitable For Going Out Everyday",
+   "title": "EZwear Simple Scoop Neck Fitted Tee Shirt For Women",
+   "category": "top",
+   "color": "white",
+   "styles": [
+    "casual",
+    "chic"
+   ],
+   "cuts": [
+    "fitted"
+   ],
+   "price": 6.58,
+   "url": "https://us.shein.com/SHEIN-EZwear-Simple-Scoop-Neck-Fitted-Tee-Shirt-For-Women-Summer-Casual-Minimalist-Basic-Modest-Suitable-For-Going-Out-Everyday-White-p-40961643.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_pi/2024/08/19/11/172404736637f9794d21aae18d85577ac774e9ecb9_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s464242856",
+   "name": "SHEIN Women's Elegant  Silky Ruched Cami Top,Slim Fit Spaghetti Strap Camisole,Shiny Satin Sleeveless Tank Top For Summer,Date Night And Vacation",
+   "title": "Women's Elegant Black Silky Ruched Cami Top",
+   "category": "top",
+   "color": "black",
+   "styles": [
+    "chic",
+    "elegant",
+    "boho"
+   ],
+   "cuts": [
+    "fitted"
+   ],
+   "price": 11.65,
+   "url": "https://us.shein.com/SHEIN-Womens-Elegant-Black-Silky-Ruched-Cami-TopSlim-Fit-Spaghetti-Strap-CamisoleShiny-Satin-Sleeveless-Tank-Top-For-SummerDate-Night-And-Vacation-p-464242856.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2026/06/03/3e/1780477297005e744ec357f1a67047ba2ad3b5682e_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s14311471",
+   "name": "Resyla Solid Round Neck Tee",
+   "title": "Resyla Solid Round Neck Tee",
+   "category": "top",
+   "color": "white",
+   "styles": [
+    "casual"
+   ],
+   "cuts": [],
+   "price": 10.51,
+   "url": "https://us.shein.com/Resyla-Solid-Round-Neck-Tee-p-14311471.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_pi/2023/03/24/1679623369b49cd884bb8665ac55a36190c81741f1_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s44865436",
+   "name": "Amorya Women's Lace Panel Elegant Satin V-Neck Camisole Top, Summer Night Out Versatile Daily Commute Modest Vintage Old Money Teacher Casual Silk Tank",
+   "title": "Amorya Women's Lace Panel Elegant Satin V-Neck Camisole Top",
+   "category": "top",
+   "color": "black",
+   "styles": [
+    "casual",
+    "chic",
+    "elegant"
+   ],
+   "cuts": [
+    "v-neck"
+   ],
+   "price": 7.79,
+   "url": "https://us.shein.com/Amorya-Womens-Lace-Panel-Elegant-Satin-V-Neck-Camisole-TopBlack-Summer-Night-Out-Versatile-Daily-Commute-Modest-Vintage-Old-Money-Teacher-Casual-Silk-Tank-p-44865436.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2025/07/15/ec/17525708282532470a9def909fd19e0d7b70116e1e_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s566535745",
+   "name": "Women's Chic Light Wash  Jeans, Long Casual Straight Leg With Slight Stretch, Raw Hem Detail For Everyday Style",
+   "title": "Women's Chic Light Wash Denim Jeans",
+   "category": "bottom",
+   "color": "denim",
+   "styles": [
+    "casual",
+    "chic"
+   ],
+   "cuts": [
+    "straight"
+   ],
+   "price": 18.35,
+   "url": "https://us.shein.com/Womens-Chic-Light-Wash-Denim-Jeans-Long-Casual-Straight-Leg-With-Slight-Stretch-Raw-Hem-Detail-For-Everyday-Style-p-566535745.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/p/spmp/2026/10/23/59/1792751468485828347f4261060a3e791e76bba18d_thumbnail_405x552.png"
+  },
+  {
+   "id": "s439652670",
+   "name": "SHEIN Tall Women's Khaki Summer Casual Office High Waist Pleated Wide Leg Pants,Old Money Business Elegant Solid Color Loose Trousers,Chic Tailored Work, Tall Women",
+   "title": "Tall Women's Khaki Summer Casual Office High Waist Pleated…",
+   "category": "bottom",
+   "color": "beige",
+   "styles": [
+    "casual",
+    "chic",
+    "elegant"
+   ],
+   "cuts": [
+    "wide-leg",
+    "high-waist",
+    "baggy",
+    "structured"
+   ],
+   "price": 27.5,
+   "url": "https://us.shein.com/SHEIN-Tall-Womens-Khaki-Summer-Casual-Office-High-Waist-Pleated-Wide-Leg-PantsOld-Money-Business-Elegant-Solid-Color-Loose-TrousersChic-Tailored-Work-Tall-Women-p-439652670.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2026/04/09/27/177570222106330cf032fb0544483a1f19a5554e66_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s48625472",
+   "name": "SHEIN EZwear Casual High Waist Straight Leg Washed  Jeans",
+   "title": "EZwear Casual High Waist Straight Leg Washed Denim Jeans",
+   "category": "bottom",
+   "color": "denim",
+   "styles": [
+    "casual"
+   ],
+   "cuts": [
+    "straight",
+    "high-waist"
+   ],
+   "price": 35.05,
+   "url": "https://us.shein.com/SHEIN-EZwear-Casual-High-Waist-Straight-Leg-Washed-Denim-Jeans-p-48625472.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2025/07/07/6f/1751874031eb75f35e76379f1f2d5d31f0d568872f_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s437554229",
+   "name": "Elenzga Women's Elegant Office Work Business Suit Pants High-Waisted  Autumn Striped Pleated Elastic Waist Loose Wide Leg Casual Trousers Teachers' Day",
+   "title": "Elenzga Women's Elegant Office Work Business Suit Pants…",
+   "category": "bottom",
+   "color": "beige",
+   "styles": [
+    "casual",
+    "elegant",
+    "office"
+   ],
+   "cuts": [
+    "wide-leg",
+    "high-waist",
+    "baggy"
+   ],
+   "price": 28.46,
+   "url": "https://us.shein.com/Elenzga-Womens-Elegant-Office-Work-Business-Suit-Pants-High-Waisted-Beige-Autumn-Striped-Pleated-Elastic-Waist-Loose-Wide-Leg-Casual-Trousers-Teachers-Day-p-437554229.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/dps/PS202610314482/bf6fc79d3aeb450ea9967fabef21056276e0fa663781b50829a6f0eb732b5008_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s527189595",
+   "name": "New Women's Fashion  Long Pants, Slim-Fit Retro Style, Versatile For All Seasons; Fashion Casual Denim Trousers, Sweatpants, Training Pants;",
+   "title": "New Women's Fashion Denim Long Pants",
+   "category": "bottom",
+   "color": "denim",
+   "styles": [
+    "casual",
+    "sporty",
+    "office"
+   ],
+   "cuts": [
+    "fitted"
+   ],
+   "price": 18.35,
+   "url": "https://us.shein.com/New-Womens-Fashion-Denim-Long-Pants-Slim-Fit-Retro-Style-Versatile-For-All-Seasons-Fashion-Casual-Denim-Trousers-Sweatpants-Training-Pants-p-527189595.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/07/09/20/178358487350cff7efc88035cf4886b2257fbe23d9_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s455616903",
+   "name": "SHEIN PETITE Women's Solid Color Slant Pocket Casual Elegant Fashionable Wide Leg Pants,Petite Women Office Work  Autumn Fall",
+   "title": "PETITE Women's Solid Color Slant Pocket Casual Elegant…",
+   "category": "bottom",
+   "color": "beige",
+   "styles": [
+    "casual",
+    "elegant",
+    "office"
+   ],
+   "cuts": [
+    "wide-leg"
+   ],
+   "price": 22.86,
+   "url": "https://us.shein.com/SHEIN-PETITE-Womens-Solid-Color-Slant-Pocket-Casual-Elegant-Fashionable-Wide-Leg-PantsPetite-Women-Office-Work-Beige-Autumn-Fall-p-455616903.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2026/05/19/99/177917621922bb5c0193996f109268caa1378372be_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s31640949",
+   "name": "SHEIN Clasi Plus Size Basic Solid Color Pleated Skirt, Suitable For Spring And Summer Fall",
+   "title": "Clasi Plus Size Basic Solid Color Pleated Skirt",
+   "category": "skirt",
+   "color": "black",
+   "styles": [
+    "casual"
+   ],
+   "cuts": [],
+   "price": 21.4,
+   "url": "https://us.shein.com/SHEIN-Clasi-Plus-Size-Basic-Solid-Color-Pleated-Skirt-Suitable-For-Spring-And-Summer-Fall-p-31640949.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_pi/2024/03/17/2d/17106563038cf6cfaddda84ae3cc09188fd559e424_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s51433248",
+   "name": "FRIFUL Women's  A-Line Pleated Midi Skirt, Academic Style, Summer Clothing",
+   "title": "FRIFUL Women's Black A-Line Pleated Midi Skirt",
+   "category": "skirt",
+   "color": "black",
+   "styles": [
+    "casual"
+   ],
+   "cuts": [
+    "a-line",
+    "midi"
+   ],
+   "price": 21.42,
+   "url": "https://us.shein.com/FRIFUL-Womens-Black-A-Line-Pleated-Midi-Skirt-Academic-Style-Summer-Clothing-p-51433248.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2025/11/17/72/176334345494a637246d03952e619f0a9681ddb8a1_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s96658156",
+   "name": "Medorina Summer Elegant Elastic Waist Pleated Midi Skirt",
+   "title": "Medorina Summer Elegant Elastic Waist Pleated Midi Skirt",
+   "category": "skirt",
+   "color": "black",
+   "styles": [
+    "elegant"
+   ],
+   "cuts": [
+    "midi"
+   ],
+   "price": 17.2,
+   "url": "https://us.shein.com/Medorina-Summer-Elegant-Elastic-Waist-Pleated-Midi-Skirt-p-96658156.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2025/07/04/7e/175159569172cc7eec2851bf5cacbfb18e5584e748_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s541250511",
+   "name": "lacRébo Romantic  Midi Dress With Blue Floral Print, Short Sleeves And Front Opening",
+   "title": "lacRébo Romantic Brown Midi Dress With Blue Floral Print",
+   "category": "dress",
+   "color": "brown",
+   "styles": [
+    "boho"
+   ],
+   "cuts": [
+    "midi"
+   ],
+   "price": 30.52,
+   "url": "https://us.shein.com/lacRebo-Romantic-Brown-Midi-Dress-With-Blue-Floral-Print-Short-Sleeves-And-Front-Opening-p-541250511.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/dps/PS2026090324732/0a97f23f2266122b552a6b0f4f109d30fa6f5293609fb052778b3003ed4ef048_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s441570861",
+   "name": "Easowa Women's Polka Dot Pattern Round Neck Cap Sleeve Elegant Mid-Length Dress Polka Dots Long Dress Women Dress Long Dress  Dot Dress Dress Outfit",
+   "title": "Easowa Women's Polka Dot Pattern Round Neck Cap Sleeve…",
+   "category": "dress",
+   "color": "black",
+   "styles": [
+    "elegant"
+   ],
+   "cuts": [],
+   "price": 35.9,
+   "url": "https://us.shein.com/Easowa-Womens-Polka-Dot-Pattern-Round-Neck-Cap-Sleeve-Elegant-Mid-Length-Dress-Polka-Dots-Long-Dress-Women-Dress-Long-Dress-Black-Dot-Dress-Dress-Outfit-p-441570861.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2026/04/13/30/1776045203ae5e9f9ed9ed3da695ffcbac0966fec6_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s516370564",
+   "name": "Poéselle Women's French Vacation Jacquard Frill Trim Fashion Dress Date  Floral Summer Elegant Romantic,Women Halloween Costumes",
+   "title": "Poéselle Women's French Vacation Jacquard Frill Trim…",
+   "category": "dress",
+   "color": "black",
+   "styles": [
+    "chic",
+    "elegant",
+    "boho"
+   ],
+   "cuts": [],
+   "price": 31.45,
+   "url": "https://us.shein.com/Poeselle-Womens-French-Vacation-Jacquard-Frill-Trim-Fashion-Dress-Date-Black-Floral-Summer-Elegant-RomanticWomen-Halloween-Costumes-p-516370564.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/pi/2026/07/01/0c/17829059190a48e6c8eab5fc5ae5d23b0ea1d5622f_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s11850742",
+   "name": "SHEIN LUNE Solid Shawl Collar Blazer Fall Cloth For Women",
+   "title": "LUNE Solid Shawl Collar Blazer Fall Cloth For Women",
+   "category": "outerwear",
+   "color": "brown",
+   "styles": [
+    "casual",
+    "office"
+   ],
+   "cuts": [
+    "structured"
+   ],
+   "price": 40.48,
+   "url": "https://us.shein.com/SHEIN-LUNE-Solid-Shawl-Collar-Blazer-Fall-Cloth-For-Women-p-11850742.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_pi/2022/10/27/1666836171df8c04d63cb787d44c22f5f3399b4f83_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s568323160",
+   "name": "SHEIN Clasi Women's Solid Color Fabric Design Blazer With Lapel, Faux Pockets, Loose Fit, Summer Clothing, Long Sleeve Teachers' Day Office Business Burnt",
+   "title": "Clasi Women's Solid Color Fabric Design Blazer With Lapel",
+   "category": "outerwear",
+   "color": "orange",
+   "styles": [
+    "casual",
+    "office"
+   ],
+   "cuts": [
+    "baggy",
+    "structured"
+   ],
+   "price": 26.6,
+   "url": "https://us.shein.com/SHEIN-Clasi-Womens-Solid-Color-Fabric-Design-Blazer-With-Lapel-Faux-Pockets-Loose-Fit-Summer-Clothing-Long-Sleeve-Teachers-Day-Office-Business-Burnt-Orange-p-568323160.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/dps/PS2026101524339/f15af8e083c9efe09b7512bd1a3dfe7b375055b183b0ff7aab23f10b7eb6ed60_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s248870204",
+   "name": "Women's Elegant Fashion Commuter Khaki Regular Fit Lapel Long Sleeve Open Front Knit Blazer Jacket With Button Details",
+   "title": "Women's Elegant Fashion Commuter Khaki Regular Fit Lapel…",
+   "category": "outerwear",
+   "color": "beige",
+   "styles": [
+    "elegant",
+    "office"
+   ],
+   "cuts": [
+    "structured"
+   ],
+   "price": 33.46,
+   "url": "https://us.shein.com/Womens-Elegant-Fashion-Commuter-Khaki-Regular-Fit-Lapel-Long-Sleeve-Open-Front-Knit-Blazer-Jacket-With-Button-Details-p-248870204.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/08/12/aa/178653708783f2959d35d62ce72681723ec5271129_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s41626343",
+   "name": "Women's Comfortable Chunky Chunky Sneakers, Breathable Lightweight Walking Shoes, Fashionable Platform Casual Sports Shoes",
+   "title": "Women's Comfortable Chunky Chunky Sneakers",
+   "category": "shoes",
+   "color": "white",
+   "styles": [
+    "casual",
+    "sporty"
+   ],
+   "cuts": [
+    "chunky"
+   ],
+   "price": 40.58,
+   "url": "https://us.shein.com/Womens-Comfortable-Chunky-Chunky-Sneakers-Breathable-Lightweight-Walking-Shoes-Fashionable-Platform-Casual-Sports-Shoes-p-41626343.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_spmp/2024/08/21/f2/1724227483aa735dbec1ccd02b0719b90274986ddb_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s365899868",
+   "name": "7cm High Heel  Ankle Boots & Ankle Boots, Comfortable & Fashionable Pointed Toe Slim Fit Elastic Boots For Women,Kitten Heels",
+   "title": "7cm High Heel Brown Ankle Boots & Ankle Boots",
+   "category": "shoes",
+   "color": "brown",
+   "styles": [
+    "casual"
+   ],
+   "cuts": [
+    "fitted"
+   ],
+   "price": 41.58,
+   "url": "https://us.shein.com/7cm-High-Heel-Brown-Ankle-Boots-Ankle-Boots-Comfortable-Fashionable-Pointed-Toe-Slim-Fit-Elastic-Boots-For-WomenKitten-Heels-p-365899868.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/01/10/a5/176805287924a1df89803c77f568b66be38132382c_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s568469296",
+   "name": "2026 New Autumn/Winter Women's Ankle Boots, Fashionable Versatile, Thick Sole Slim Chelsea Boots, Women's Boots, Women's Thick Sole Boots, Boots, Fashionable Versatile  Glossy Faux Leather Chelsea Ankle Boots, Spring/Autumn/Winter Black Work Boots. Daily Wear Fashion Boots, Party, Banquet, Wedding, Fashion Boots. Suitable For Pairing With Jeans, Dresses, Short Skirts, Leather Pants, Skirts, Leather Jackets, Sweaters, Down Jackets, Hoodies, Jackets",
+   "title": "2026 New Autumn/Winter Women's Ankle Boots",
+   "category": "shoes",
+   "color": "black",
+   "styles": [
+    "casual",
+    "elegant",
+    "office"
+   ],
+   "cuts": [
+    "fitted"
+   ],
+   "price": 34.5,
+   "url": "https://us.shein.com/2026-New-AutumnWinter-Womens-Ankle-Boots-Fashionable-Versatile-Thick-Sole-Slim-Chelsea-Boots-Womens-Boots-Womens-Thick-Sole-Boots-Boots-Fashionable-Versatile-Black-Glossy-Faux-Leather-Chelsea-Ankle-Boots-SpringAutumnWinter-Black-Work-Boots-Daily-Wear-Fashion-Boots-Party-Banquet-Wedding-Fashion-Boots-Suitable-For-Pairing-With-Jeans-Dresses-Short-Skirts-Leather-Pants-Skirts-Leather-Jackets-Sweaters-Down-Jackets-Hoodies-Jackets-p-568469296.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/09/16/12/178957083108acc911f720d598c02cda545508f09a_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s155059663",
+   "name": "Women's Running Shoes Casual Breathable Sports Shoes Fashionable Lightweight Sneakers. Take One Size Smaller",
+   "title": "Women's Running Shoes Casual Breathable Sports Shoes…",
+   "category": "shoes",
+   "color": "white",
+   "styles": [
+    "casual",
+    "sporty"
+   ],
+   "cuts": [],
+   "price": 10.22,
+   "url": "https://us.shein.com/Womens-Running-Shoes-Casual-Breathable-Sports-Shoes-Fashionable-Lightweight-Sneakers-Take-One-Size-Smaller-p-155059663.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/01/23/47/1769164317598e52ffa74ed9223b2785307e8d4881_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s199752526",
+   "name": "Fashion High Heel Ankle Boots For Women 2025 Autumn/Winter New French Style Pointed Toe Chunky Heel  Premium Slim Fit Boots With Back Zipper Elegant Versatile Ankle Boots",
+   "title": "Fashion High Heel Ankle Boots For Women 2025 Autumn/Winter…",
+   "category": "shoes",
+   "color": "brown",
+   "styles": [
+    "chic",
+    "elegant"
+   ],
+   "cuts": [
+    "fitted",
+    "chunky"
+   ],
+   "price": 41.42,
+   "url": "https://us.shein.com/Fashion-High-Heel-Ankle-Boots-For-Women-2025-AutumnWinter-New-French-Style-Pointed-Toe-Chunky-Heel-Brown-Premium-Slim-Fit-Boots-With-Back-Zipper-Elegant-Versatile-Ankle-Boots-p-199752526.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/11/10/70/1762759040e30800d341deffc1da17a2e1654d9799_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s36405733",
+   "name": "Women's Y2K Sweet & Cool  Casual Sneakers, EVA Thick Sole 7CM Height Increase, Plus Size Lightweight, With Sun Decoration Pendant Chain",
+   "title": "Women's Y2K Sweet & Cool White Casual Sneakers",
+   "category": "shoes",
+   "color": "white",
+   "styles": [
+    "casual",
+    "street",
+    "sporty"
+   ],
+   "cuts": [],
+   "price": 37.27,
+   "url": "https://us.shein.com/Womens-Y2K-Sweet-Cool-White-Casual-Sneakers-EVA-Thick-Sole-7CM-Height-Increase-Plus-Size-Lightweight-With-Sun-Decoration-Pendant-Chain-p-36405733.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_spmp/2024/11/16/c4/173174441018ac14690f999256530a62f01df78338_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s41106629",
+   "name": "Elegant Crescent Underarm Shoulder Bag, Women's Fashion Casual Solid Color Underarm Bag",
+   "title": "Elegant Crescent Underarm Shoulder Bag",
+   "category": "bag",
+   "color": "black",
+   "styles": [
+    "casual",
+    "elegant"
+   ],
+   "cuts": [],
+   "price": 13.57,
+   "url": "https://us.shein.com/Elegant-Crescent-Underarm-Shoulder-Bag-Womens-Fashion-Casual-Solid-Color-Underarm-Bag-p-41106629.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_spmp/2024/08/17/d5/172389956152d523ed44c2acb6c938354e03f1f243_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s146289964",
+   "name": "Fashionable Summer Khaki Straw Bag, Minimalist Retro Chain Zipper Shoulder Dumpling Bag",
+   "title": "Fashionable Summer Khaki Straw Bag",
+   "category": "bag",
+   "color": "beige",
+   "styles": [
+    "chic",
+    "boho"
+   ],
+   "cuts": [],
+   "price": 21.77,
+   "url": "https://us.shein.com/Fashionable-Summer-Khaki-Straw-Bag-Minimalist-Retro-Chain-Zipper-Shoulder-Dumpling-Bag-p-146289964.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_spmp/2024/05/25/44/1716624725639dc158bd26db1050b3d90c5b5b2c71_thumbnail_405x552.jpg"
+  },
+  {
+   "id": "s5866542",
+   "name": "Lightweight, Business Casual Bag For Teen Girls Women College Students,  Perfect For Office, College, Work",
+   "title": "Lightweight",
+   "category": "bag",
+   "color": "black",
+   "styles": [
+    "casual",
+    "office"
+   ],
+   "cuts": [],
+   "price": 14.35,
+   "url": "https://us.shein.com/Lightweight-Business-Casual-Bag-For-Teen-Girls-Women-College-Students-Perfect-For-Office-College-Work-p-5866542.html?mallCode=1",
+   "image": "https://img.ltwebstatic.com/images3_spmp/2024/04/24/af/1713945895c5c3a0b282660b8913da735fbd464028_thumbnail_405x552.jpg"
+  }
+ ]
+}

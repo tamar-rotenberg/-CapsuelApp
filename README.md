@@ -46,7 +46,16 @@ npm test         # engine tests
 
 ## Real SHEIN products
 
-The app uses demo products until a SHEIN affiliate product feed is connected.
+The live app uses **30 real SHEIN US products** (photos, prices, product links) fetched with the
+Apify [SHEIN Scraper](https://apify.com/hypebridge/shein-scraper). Scraping costs money (about $0.12 per
+product + $0.10 per search) and goes against SHEIN's terms, so it is kept small and run by hand:
+
+1. Edit the searches in `scripts/apify-queries.json` (query, color, how many).
+2. `APIFY_TOKEN=... NODE_USE_ENV_PROXY=1 node scripts/fetch-apify.mjs --budget 4` (stops before going over budget or your Apify credit; already-fetched searches are skipped).
+3. `node scripts/build-catalog.mjs` (free) rebuilds `public/data/products.json`; commit it.
+
+### Or: an affiliate product feed
+
 
 1. Join the SHEIN affiliate program (directly, or through a network such as CJ, Awin or Impact) and get your **product feed link** (CSV, TSV or JSON, gzipped is fine).
 2. In GitHub: **Settings → Secrets and variables → Actions → New repository secret**, name `SHEIN_FEED_URL`, value = the feed link.
@@ -55,7 +64,6 @@ The app uses demo products until a SHEIN affiliate product feed is connected.
 To try a feed locally: `node scripts/import-feed.mjs path/or/url/to/feed.csv` then `npm start`.
 The importer sorts products into categories, palette colors, styles and cuts from their titles, skips what doesn't fit
 (men's, kids, sets, prints, home goods), and keeps up to 150 products per category with a spread of colors.
-The generated `public/data/products.json` is never committed.
 
 ## Not in this POC
 

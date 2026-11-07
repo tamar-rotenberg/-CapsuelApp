@@ -11,7 +11,7 @@ test('dev server returns 404 for a missing file and keeps running', async () => 
       srv.on('exit', (code) => reject(new Error(`server exited ${code}`)));
     });
     const base = `http://localhost:${port}`;
-    assert.equal((await fetch(`${base}/data/products.json`)).status, 404);
+    assert.equal((await fetch(`${base}/no-such-file.json`)).status, 404);
     const home = await fetch(`${base}/`);
     assert.equal(home.status, 200);
     assert.match(home.headers.get('content-type'), /text\/html/);

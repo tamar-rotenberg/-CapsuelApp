@@ -79,3 +79,18 @@ test('command line writes products.json, and refuses a feed too thin for outfits
   writeFileSync(thin, 'id,title,link,price,color\n1,Tee,https://example.com/1,5,Black\n');
   assert.throws(() => execFileSync('node', ['scripts/import-feed.mjs', thin, '--out', join(dir, 'x.json')], { stdio: 'pipe' }));
 });
+
+test('Apify results: title color wins, else the searched color; category from title or query', async () => {
+  const { rowsFromApify } = await import('../scripts/build-catalog.mjs');
+  const raw = [{ query: 'women brown ankle boots', color: 'brown', items: [
+    { goodsId: '1', title: 'Women Fashion Chunky Heel Boots', productUrl: 'https://example.com/1', imageUrl: 'https://example.com/1.jpg', price: 29.9 },
+    { goodsId: '2', title: 'Black Western Boots For Women', productUrl: 'https://example.com/2', imageUrl: 'https://example.com/2.jpg', price: 31 },
+    { goodsId: '3', title: 'Fashion Item For Women', productUrl: 'https://example.com/3', imageUrl: 'https://example.com/3.jpg', price: 9 },
+  ] }];
+  const [a, b, c] = rowsFromApify(raw).map(toProduct);
+  assert.equal(a.color, 'brown');
+  assert.equal(a.category, 'shoes');
+  assert.equal(b.color, 'black');
+  assert.equal(c.category, 'shoes'); // no clue in the title, so the search phrase decides
+  assert.equal(a.image, 'https://example.com/1.jpg');
+});

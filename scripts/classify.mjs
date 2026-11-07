@@ -142,7 +142,7 @@ export function toProduct(row) {
   return {
     id: `s${id}`.replace(/[^\w-]/g, ''),
     name: group || (colorText ? title.replace(new RegExp(`\\b${colorText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'), '').trim() : title),
-    title: title.replace(/^SHEIN\s+/i, ''),
+    title: shortTitle(title),
     category,
     color,
     styles: stylesOf(text),
@@ -151,4 +151,11 @@ export function toProduct(row) {
     url,
     ...(image ? { image } : {}),
   };
+}
+
+/** SHEIN titles are keyword-stuffed: keep the part before the first comma, at most ~60 characters. */
+export function shortTitle(title) {
+  let t = title.replace(/^SHEIN\s+/i, '').split(/[,|]/)[0].replace(/\s+/g, ' ').trim();
+  if (t.length > 60) t = `${t.slice(0, 60).replace(/\s+\S*$/, '')}…`;
+  return t;
 }

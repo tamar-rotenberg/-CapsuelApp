@@ -1,0 +1,11 @@
+[
+  { "query": "women white basic tee", "color": "white", "count": 3 },
+  { "query": "women black satin cami top", "color": "black", "count": 3 },
+  { "query": "women blue straight leg jeans", "color": "denim", "count": 3 },
+  { "query": "women beige wide leg trousers", "color": "beige", "count": 3 },
+  { "query": "women black pleated midi skirt", "color": "black", "count": 3 },
+  { "query": "women camel blazer", "color": "brown", "count": 3 },
+  { "query": "women white chunky sneakers", "color": "white", "count": 3 },
+  { "query": "women brown ankle boots", "color": "brown", "count": 3 },
+  { "query": "women black shoulder bag", "color": "black", "count": 3 }
+]

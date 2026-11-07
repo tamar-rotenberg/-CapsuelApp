@@ -116,7 +116,9 @@ const CAPSULE_PLAN = [['top', 4], ['bottom|skirt', 3], ['outerwear', 1], ['shoes
 /** A small set of pieces that mix into many outfits, within palette and budget. Owned items are free. */
 export function buildCapsule(profile = {}, { budget = Infinity, catalog = CATALOG } = {}) {
   const owned = (p) => profile.closet?.includes(p.id);
-  const pool = catalog.filter((p) => paletteScore(p.color, profile.season) >= 0.6 || owned(p));
+  // Prefer your palette; relax it when the catalog is too small to fill a capsule.
+  const inPalette = (min) => catalog.filter((p) => paletteScore(p.color, profile.season) >= min || owned(p));
+  const pool = [0.6, 0.45, 0].map(inPalette).find((list) => list.length >= 40) || catalog;
   const slotsLeft = () => CAPSULE_PLAN.reduce((s, [, n]) => s + n, 0) - chosen.length;
   const chosen = [];
   let spent = 0;
