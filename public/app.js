@@ -24,7 +24,10 @@ const ctx = {
     el.dataset.view = view;
     document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('active', b.dataset.view === view));
     updateChrome();
-    VIEWS[view].render(el, ctx);
+    // Fresh container per visit, so listeners from the previous screen don't pile up.
+    const host = document.createElement('div');
+    el.append(host);
+    VIEWS[view].render(host, ctx);
     window.scrollTo(0, 0);
   },
 };

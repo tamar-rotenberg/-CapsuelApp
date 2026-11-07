@@ -154,3 +154,18 @@ export function buildCapsule(profile = {}, { budget = Infinity, catalog = CATALO
 }
 
 export { SEASONS };
+
+// ---------- Occasions ----------
+export const OCCASIONS = {
+  everyday: { label: 'Everyday', styles: null },
+  work: { label: 'Work', styles: ['office', 'chic'] },
+  date: { label: 'Date night', styles: ['elegant', 'chic'] },
+  weekend: { label: 'Weekend', styles: ['casual', 'street', 'boho'] },
+  active: { label: 'Active', styles: ['sporty', 'street'] },
+};
+
+/** The profile with its styles swapped for the occasion's styles. */
+export function forOccasion(profile, occasion) {
+  const o = OCCASIONS[occasion];
+  return o?.styles ? { ...profile, styles: o.styles } : profile;
+}
