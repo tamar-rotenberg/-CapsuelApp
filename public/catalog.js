@@ -67,6 +67,43 @@ export function sheinSearchUrl(query) {
   return `https://us.shein.com/pdsearch/${encodeURIComponent(query)}/`;
 }
 
+// Cut / silhouette tags, used for body-shape rules (see profile.js).
+const CUTS = {
+  'Basic Crew Neck Tee': ['relaxed'],
+  'Ribbed Crop Tank': ['cropped', 'fitted'],
+  'Satin Cowl Neck Cami': ['cowl', 'flowy'],
+  'Oversized Poplin Shirt': ['oversized'],
+  'Puff Sleeve Blouse': ['puff-sleeve'],
+  'Cable Knit Sweater': ['chunky'],
+  'Graphic Print Hoodie': ['oversized'],
+  'Floral Peasant Top': ['flowy', 'v-neck'],
+  'Fitted Turtleneck': ['fitted', 'high-neck'],
+  'High Waist Straight Jeans': ['high-waist', 'straight'],
+  'Wide Leg Tailored Trousers': ['high-waist', 'wide-leg'],
+  'Cargo Parachute Pants': ['baggy'],
+  'Biker Shorts': ['fitted', 'short'],
+  'Linen Drawstring Pants': ['wide-leg', 'flowy'],
+  'Denim Mom Shorts': ['high-waist', 'short'],
+  'Flare Leggings': ['flare', 'fitted'],
+  'Satin Midi Slip Skirt': ['bias-cut', 'midi'],
+  'Pleated Tennis Mini Skirt': ['a-line', 'mini'],
+  'Tiered Boho Maxi Skirt': ['tiered', 'maxi'],
+  'Denim Mini Skirt': ['mini', 'straight'],
+  'Pencil Skirt': ['pencil', 'fitted'],
+  'Floral Wrap Midi Dress': ['wrap', 'midi', 'v-neck'],
+  'Little Black Bodycon Dress': ['bodycon', 'fitted'],
+  'Square Neck Linen Sundress': ['a-line', 'square-neck'],
+  'Knit Sweater Dress': ['straight'],
+  'Satin Slip Maxi Dress': ['bias-cut', 'maxi'],
+  'Shirt Dress with Belt': ['belted', 'a-line'],
+  'Oversized Denim Jacket': ['oversized'],
+  'Faux Leather Biker Jacket': ['cropped', 'structured'],
+  'Longline Blazer': ['longline', 'structured'],
+  'Cropped Cardigan': ['cropped'],
+  'Trench Coat': ['belted', 'longline'],
+  'Zip Up Windbreaker': ['oversized'],
+};
+
 // Each color variant becomes its own product, like a SHEIN listing per color.
 export const CATALOG = RAW.flatMap(([name, category, colors, styles, price], i) =>
   colors.map((color, j) => ({
@@ -76,6 +113,7 @@ export const CATALOG = RAW.flatMap(([name, category, colors, styles, price], i) 
     category,
     color,
     styles,
+    cuts: CUTS[name] || [],
     price: +(price + j * 0.5).toFixed(2),
     url: sheinSearchUrl(titleFor(name, color)),
   }))

@@ -68,10 +68,10 @@ export function outfitScore(items) {
 /**
  * Build outfits around an anchor item.
  * anchor: { category, color, styles }   (can be a catalog item or the user's own piece)
- * opts: { count, maxBudget, style, catalog }
+ * opts: { count, maxBudget, style, catalog, boost(item) -> extra score }
  */
 export function buildOutfits(anchor, opts = {}) {
-  const { count = 4, maxBudget = Infinity, style = null, catalog = CATALOG } = opts;
+  const { count = 4, maxBudget = Infinity, style = null, catalog = CATALOG, boost = null } = opts;
   const slots = SLOTS_FOR[anchor.category] || SLOTS_FOR.top;
   const pool = catalog.filter((p) => p.id !== anchor.id && (!style || p.styles.includes(style)));
   const used = new Map(); // item id -> times used, to keep outfits varied
@@ -89,7 +89,7 @@ export function buildOutfits(anchor, opts = {}) {
         .map((p) => {
           const fit = picked.reduce((s, x) => s + pairScore(x, p), 0) / picked.length;
           const repeat = (used.get(p.id) || 0) * 0.25 + (used.get(p.name) || 0) * 0.12;
-          return { p, score: fit - repeat };
+          return { p, score: fit - repeat + (boost ? boost(p) : 0) };
         })
         .sort((a, b) => b.score - a.score);
       const best = candidates[0];
